@@ -9,6 +9,7 @@ php5
 libapache2-mod-php5
 php-pear
 screen
+byobu
 vim
 vim-gnome
 emacs
