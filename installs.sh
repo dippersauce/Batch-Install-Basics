@@ -53,7 +53,3 @@ apt-get install mysql-server php5-mysql  -y
 # Dropbox
 wget -O - "http://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - # remove _64 for x86 platforms
 ~/.dropbox-dist/dropboxd
-
-# Ruby (RVM)
-curl -L https://get.rvm.io | bash -s stable --ruby
-source /home/{YOUR_USERNAME}/.rvm/scripts/rvm
