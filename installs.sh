@@ -3,29 +3,15 @@
 # Array of applications to be installed
 apps=(
 
-gconf-editor
-apache2
+vim
+git
+pv
+tree
+curl
 php5
+apache2
 libapache2-mod-php5
 php-pear
-screen
-byobu
-vim
-vim-gnome
-emacs
-nano
-java-jre
-perl
-git
-subversion
-pv
-meld
-netbeans
-tree
-mysql-workbench
-idle
-pidgin
-curl
 
 )
 
@@ -35,22 +21,13 @@ do
 	apt-get install $app -y
 done
 
-# Pear (PHPUnit and Xdebug)
-pear channel-discover pear.symfony-project.com
-pear channel-discover pear.phpunit.de
-pear install --alldeps phpunit/PHPUnit
-
-pear channel-discover pecl.php.net
-pear install pecl/xdebug
+# Enable apache rewrite module
+a2enmod rewrite
 
 # Set git credentials
 git config --global user.name "YOUR NAME"
 git config --global user.email "YOU@YOUREMAIL.com"
 
 # MySQL
-apt-get install mysql-server php5-mysql  -y
+apt-get install mysql-server php5-mysql -y
 /etc/init.d/apache2 restart
-
-# Dropbox
-wget -O - "http://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - # remove _64 for x86 platforms
-~/.dropbox-dist/dropboxd
