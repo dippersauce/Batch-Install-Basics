@@ -1,23 +1,24 @@
-Bash-Batch-Install-Basics
-=========================
+# Bash Batch Install Basics
 
-A bash script to install all your essential basics on a fresh Ubuntu install
+An example bash script to install all your essential basics on a fresh Ubuntu install. Useful for rapidly setting up a LAMP stack on a VM or server, or installing all your essentials on a new machine.
 
-First open the installs.sh file in a text editor, take a look at the array of apps, you can add or edit the list according to your needs. Below the array it runs 'apt-get install X' on each one, so make sure the string you enter is the proper name of the package. The -y flag automatically says 'YES' to 'Are you sure you wish to install X?' to save you faffing.
+First open the ```installs.sh``` file in a text editor, take a look at the array of apps, you can add or edit the list according to your needs.
 
-Below the installation line there are a few extras - such as installing MySQL as this requires you to set a root password, so I put it towards the end so it can get a lot done before requiring your input. There are a couple of things which I've filled with default values - change these to your own before proceeding.
+Below the array it runs ```apt-get install``` on each one, so make sure the string you enter is the proper name of the package. The ```-y``` flag automatically says 'YES' to 'Are you sure you wish to install X?' to save you having to watch the script and wait to confirm each one.
 
-Once you're happy with what it's going to do, return to the console and make the file executable. You're going to need to be root to execute the file so you may as well do that now:
+Once you're happy with what it's going to do, return to the console and make the file executable if it's not already.
 
-sudo su
-chmod +x installs.sh
+```
+    chmod +x installs.sh
+```
 
-Then execute the file (still as root):
+Then become root and execute the file:
 
-./installs.sh
+```
+    sudo su
+    ./installs.sh
+```
 
 The script will run through all the instructions as if they were typed in to the console with you as root.
 
-Please patch if you notice any problems.
-
-The script should work on other distros such as Fedora - just replace 'apt-get' with 'yum'.
+If there are any installs that require user input (like mysql), putting these outside (and after) the loop will allow it to install everything before pausing to wait for your input.
