@@ -26,8 +26,9 @@ a2enmod rewrite
 
 # Set git credentials
 git config --global user.name "YOUR NAME"
-git config --global user.email "YOU@YOUREMAIL.com"
+git config --global user.email YOU@YOUREMAIL.com
 
 # MySQL
 apt-get install mysql-server php5-mysql -y
-/etc/init.d/apache2 restart
+
+service apache2 restart
