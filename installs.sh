@@ -1,34 +1,20 @@
+
 #!/bin/bash
+#Script to allow user to install packages automatically.
 
-# Array of applications to be installed
-apps=(
+#pull an update to ensure we have the most up-to-date package lists. 
+apt-get update
+#stack them, makes them easier to read
+packages="
+	gimp
+	vlc
+	chromium-browser
+	gparted
+	filezilla
+         "
 
-vim
-git
-pv
-tree
-curl
-php5
-apache2
-libapache2-mod-php5
-php-pear
+#install each app from the array with "yes" flag
 
-)
+	apt-get install $packages -y 
 
-# Loop over apps and install each one with default 'yes' flag
-for app in "${apps[@]}"
-do
-	apt-get install $app -y
-done
-
-# Enable apache rewrite module
-a2enmod rewrite
-
-# Set git credentials
-git config --global user.name "YOUR NAME"
-git config --global user.email YOU@YOUREMAIL.com
-
-# MySQL
-apt-get install mysql-server php5-mysql -y
-
-service apache2 restart
+echo Package installation has finished.
