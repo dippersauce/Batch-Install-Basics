@@ -21,4 +21,4 @@ Then become root and execute the file:
 
 The script will run through all the instructions as if they were typed in to the console with you as root.
 
-If there are any installs that require user input (like mysql), putting these outside (and after) the loop will allow it to install everything before pausing to wait for your input.
+
