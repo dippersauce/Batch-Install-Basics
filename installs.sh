@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #Script to allow user to install packages automatically.
 
@@ -11,6 +10,7 @@ packages="
 	chromium-browser
 	gparted
 	filezilla
+	openjdk-7-jre
          "
 
 #install each app from the array with "yes" flag
