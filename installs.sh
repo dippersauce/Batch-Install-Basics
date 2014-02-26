@@ -18,8 +18,6 @@ packages="
 
 	apt-get install $packages -y 
 	
-#enable firewall
-sudo ufw enable
 
 
 echo Package installation has finished.
