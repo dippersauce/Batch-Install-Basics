@@ -11,10 +11,15 @@ packages="
 	gparted
 	filezilla
 	openjdk-7-jre
+	ufw
          "
 
 #install each app from the array with "yes" flag
 
 	apt-get install $packages -y 
+	
+#enable firewall
+sudo ufw enable
+
 
 echo Package installation has finished.
