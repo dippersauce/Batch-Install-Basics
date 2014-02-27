@@ -1,6 +1,6 @@
 # Bash Batch Install Basics
 
-An example bash script to install all your essential basics on a fresh Ubuntu install. Useful for rapidly setting up a LAMP stack on a VM or server, or installing all your essentials on a new machine.
+An example bash script to install all your essential basics on a fresh Ubuntu install. Useful for rapidly setting up a VM or server, or installing all your essentials on a new machine.
 
 First open the ```installs.sh``` file in a text editor, take a look at the array of apps, you can add or edit the list according to your needs.
 
