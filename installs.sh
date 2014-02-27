@@ -17,7 +17,7 @@
 
 read -p "Do you wish to install from the DEB list or your distros repositories?" answer
 if [[ $answer = y ]] ; then
-  # run the command
+  # run the command for installing from deb
 fi
 
 #pull an update to ensure we have the most up-to-date package lists. 
