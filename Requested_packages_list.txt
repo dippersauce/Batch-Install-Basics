@@ -62,3 +62,4 @@
  libpostproc-extra-52
  libswscale-extra-2
  ubuntu-restricted-extras
+ wine1.7
