@@ -1,18 +1,18 @@
 #List of requested pre-listed packages for the install script.
 #This list will be curated later.
 
-ubuntu-tweak 
-vlc
-gimp
+ ubuntu-tweak 
+ vlc
+ gimp
  gimp-data
  gimp-plugin-registry
  gimp-data-extras
  y-ppa-manager
- firestarter
+ firestarter --removed, no longer maintained
  bleachbit
  openjdk-7-jre
- oracle-java7-installer
- flashplugin-installer
+ oracle-java7-installer  --redundant, will not be included
+ flashplugin-installer   --redundant, will not be included
  unace
  unrar
  zip
@@ -27,7 +27,7 @@ gimp
  arj
  cabextract
  file-roller
- non-free-codecs
+ non-free-codecs  --redundant, will not be included
  libxine1-ffmpeg
  mencoder
  flac
@@ -46,9 +46,9 @@ gimp
  mpg321
  mpg123
  libflac++6
- ffmpeg
- totem-mozilla
- icedax
+ ffmpeg     
+ totem-mozilla     
+ icedax     
  lame
  libmad0
  libjpeg-progs
