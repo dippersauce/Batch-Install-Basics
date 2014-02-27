@@ -15,7 +15,7 @@
 ppa="
 ppa:tualatrix/ppa
 "
-#add each ppa from the array wiht the "yes" flag.
+#add each ppa from the array with the "yes" flag.
         sudo add-apt-repository $ppa -y
 
 #stack them, makes them easier to read.
