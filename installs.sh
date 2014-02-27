@@ -6,14 +6,19 @@
 #script can now detect architecture and adapt accordingly.
 
 
+#eventually this will be used to properly choose whic deb files to fetch.
+#WARNING: if your installed .deb file has no online repository that package won't be updated. 
+#MACHINE_TYPE=`uname -m`
+#if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+#  local arch=64
+#else
+#  local arch=32
+#fi
 
-MACHINE_TYPE=`uname -m`
-if [ ${MACHINE_TYPE} == 'x86_64' ]; then
-  local arch=64
-else
-  local arch=32
+read -p "Do you wish to install from the DEB list or your distros repositories?" answer
+if [[ $answer = y ]] ; then
+  # run the command
 fi
-
 
 #pull an update to ensure we have the most up-to-date package lists. 
         apt-get update
@@ -40,5 +45,6 @@ packages="
 	apt-get install $packages -y 
 	
 
+URL='http://path.to/my.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
 
 echo Package installation has finished.
