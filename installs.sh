@@ -1,12 +1,18 @@
 #!/bin/bash
 #Script to allow user to install packages automatically.
-#v0.2 (Beta)
+#v0.3 (Beta)
 #Whats new:
 #added the ability to add ppa repositories.
+#script can now detect architecture and adapt accordingly.
 
 
 
-
+MACHINE_TYPE=`uname -m`
+if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+  local arch=64
+else
+  local arch=32
+fi
 
 
 #pull an update to ensure we have the most up-to-date package lists. 
