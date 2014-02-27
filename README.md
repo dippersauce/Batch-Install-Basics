@@ -6,6 +6,10 @@ First open the ```installs.sh``` file in a text editor, take a look at the array
 
 Below the array it runs ```apt-get install``` on each one, so make sure the string you enter is the proper name of the package. The ```-y``` flag automatically says 'YES' to 'Are you sure you wish to install X?' to save you having to watch the script and wait to confirm each one.
 
+PPa's can be added with the PPA array, simply add ppa:"example" to the array to add it to the list.
+
+A list of reccomended packages will be included in release 0.6.
+
 Once you're happy with what it's going to do, return to the console and make the file executable if it's not already.
 
 ```
