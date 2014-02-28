@@ -6,7 +6,7 @@
 #script can now detect architecture and adapt accordingly.
 
 
-#eventually this will be used to properly choose whic deb files to fetch.
+#eventually this will be used to properly choose which deb files to fetch.
 #WARNING: if your installed .deb file has no online repository that package won't be updated. 
 #MACHINE_TYPE=`uname -m`
 #if [ ${MACHINE_TYPE} == 'x86_64' ]; then
@@ -18,13 +18,15 @@
 
 read -p "Do you wish to install from the DEB list or your distros repositories? (deb/repo)?" PROMPT
 if [ "$PROMPT" == "deb" ]; then
-  echo "Installing from DEB list.";
-  
+  printf "Installing from DEB list.\n";
+  printf "WARNING: if your listed .deb files do not have an online repository, those package won't be updated!\n"
+  sleep 3
 else
-  echo "Installing from the repositories.";
+  printf "Installing from the repositories.";
   #pull an update to ensure we have the most recent package lists.
   apt-get update
   
+  #some packages may require additional PPAs, they can be added here.
   ppa="
 ppa:tualatrix/ppa
 "
@@ -54,4 +56,4 @@ fi
 
 URL='http://path.to/my.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
 
-echo Package installation has finished.
+printf "Package installation has finished."
