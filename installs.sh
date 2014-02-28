@@ -35,7 +35,7 @@ elif [ "$PROMPT" == "repo" ]; then
   
   #some packages may require additional PPAs, they can be added here.
   ppa="
-ppa:tualatrix/ppa
+ppa:example/ppa
 "
 #add each ppa from the array with the "yes" flag.
         sudo add-apt-repository $ppa -y
