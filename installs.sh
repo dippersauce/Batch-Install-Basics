@@ -15,15 +15,17 @@
 #  local arch=32
 #fi
 
-read -p "Do you wish to install from the DEB list or your distros repositories?" answer
-if [[ $answer = y ]] ; then
-  # run the command for installing from deb
-fi
 
-#pull an update to ensure we have the most up-to-date package lists. 
-        apt-get update
-
-ppa="
+read -p "Do you wish to install from the DEB list or your distros repositories? (deb/repo)?" PROMPT
+if [ "$PROMPT" == "deb" ]; then
+  echo "Installing from DEB list.";
+  
+else
+  echo "Installing from the repositories.";
+  #pull an update to ensure we have the most recent package lists.
+  apt-get update
+  
+  ppa="
 ppa:tualatrix/ppa
 "
 #add each ppa from the array with the "yes" flag.
@@ -43,6 +45,11 @@ packages="
 #install each app from the array with "yes" flag.
 
 	apt-get install $packages -y 
+  
+fi
+
+
+
 	
 
 URL='http://path.to/my.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
