@@ -15,5 +15,5 @@ Fetching of 3rd-party .deb pachages will be supported, not sure if it will be im
 -----
 
 Version 0.5 Beta:
-
+Final version.
 -----
