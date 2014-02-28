@@ -28,7 +28,7 @@ else
     
 fi
   
-else
+elif [ "$PROMPT" == "repo" ]; then
   printf "Installing from the repositories.";
   #pull an update to ensure we have the most recent package lists.
   apt-get update
