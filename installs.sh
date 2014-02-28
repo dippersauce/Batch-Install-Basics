@@ -1,10 +1,7 @@
 #!/bin/bash
 #Script to allow user to install packages automatically.
 #v0.4 (Beta)
-#Whats new:
-#added the ability to add ppa repositories.
-#script can now detect architecture and adapt accordingly.
-#script can now fetch deb files from external sources, and download the proper packages for that achitecture.
+
 
 
 
