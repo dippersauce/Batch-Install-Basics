@@ -21,6 +21,11 @@ if [ "$PROMPT" == "deb" ]; then
   printf "Installing from DEB list.\n";
   printf "WARNING: if your listed .deb files do not have an online repository, those package won't be updated!\n"
   sleep 3
+  #place the URL path to the DEB package here.
+  
+  URL='http://path.to/my.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
+  URL='http://path.to/my.deb2'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
+  
 else
   printf "Installing from the repositories.";
   #pull an update to ensure we have the most recent package lists.
