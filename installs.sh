@@ -1,6 +1,6 @@
 #!/bin/bash
 #Script to allow user to install packages automatically.
-#v0.3 (Beta)
+#v0.4 (Beta)
 #Whats new:
 #added the ability to add ppa repositories.
 #script can now detect architecture and adapt accordingly.
@@ -56,11 +56,5 @@ packages="
 	apt-get install $packages -y 
   
 fi
-
-
-
-	
-
-URL='http://path.to/my.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
 
 printf "Package installation has finished."
