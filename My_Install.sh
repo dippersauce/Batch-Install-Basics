@@ -53,6 +53,7 @@ packages="
 	sublime-text-installer
 	unrar
 	p7zip
+	python-pip
 	
          "
 
@@ -61,6 +62,8 @@ packages="
 	apt-get install $packages -y 
   
 fi
+
+sudo pip install butterfly
 
 printf "Package installation has finished."
 sleep 5
