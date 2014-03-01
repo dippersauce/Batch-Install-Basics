@@ -27,16 +27,19 @@ fi
   
 elif [ "$PROMPT" == "repo" ]; then
   printf "Installing from the repositories.";
-  #pull an update to ensure we have the most recent package lists.
+#pull an update to ensure we have the most recent package lists.
   apt-get update
   
-  #some packages may require additional PPAs, they can be added here.
+#some packages may require additional PPAs, they can be added here.
   ppa="
 ppa:example/ppa
 "
 #add each ppa from the array with the "yes" flag.
         sudo add-apt-repository $ppa -y
 
+#pull another update.
+        sudo apt-get update
+  
 #stack them, makes them easier to read.
 packages="
 	gimp
@@ -55,3 +58,4 @@ packages="
 fi
 
 printf "Package installation has finished."
+sleep 5
