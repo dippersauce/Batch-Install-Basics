@@ -2,13 +2,19 @@
 
 An example bash script to install all your essential basics on a fresh Ubuntu install. Useful for rapidly setting up a VM or server, or installing all your essentials on a new machine.
 
-First open the ```installs.sh``` file in a text editor, take a look at the arrays, you can add or edit the list according to your needs.
+First, open the ```installs.sh``` file in a text editor, take a look at the arrays, you can add or edit the lists according to your needs.
 
-Below the array it runs ```apt-get install``` on each one, so make sure the string you enter is the proper name of the package. The ```-y``` flag automatically says 'YES' to 'Are you sure you wish to install X?' to save you having to watch the script and wait to confirm each one.
+Packages can be installed directly from your distro's repositories, however other packages can be installed if you provide the proper PPA's.
 
-PPa's can be added with the PPA array, simply add ppa:"example" to the array to add it to the list.
+PPa's can be added with the PPA array, simply add "ppa:example" to the array to add it to the list.
 
-Deb packages can be downloaded and installed from the internet automatically, all you need is a valid URL to the package.
+Deb packages can be downloaded and installed  automatically, all you need is a valid URL to the package. Two arrays are used to sperate the 64-bit and 32-bit verions.
+
+```
+URL='http://path.to/my64bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
+
+URL='http://path.to/my32bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
+```
 
 Once you're happy with what it's going to do, return to the console and make the file executable if it's not already.
 
