@@ -3,7 +3,9 @@
 #Script to install packages automatically. Usefull for rapidly setting up a new installation of Linux.
 #No longer a fork of bennuttall's "installs.sh" , as the script has been completely rewritten and relicensed.
 
-#v0.5 (Stable)
+#v0.6 (Stable)
+#No longer using uname to determine achitecture, becasue in a chroot'ed 32-bit environment, 
+#uname still answers like the 64-bit host system. Instead, the program will fetch the length of a long bit.
 
 #Copyright (C) 2014  Austin "MTSnacks" Lasota
 
@@ -26,19 +28,20 @@
 
 
 
-read -p "Do you wish to install from the DEB list or your distros repositories? \n(deb/repo)?" PROMPT
+read -p "Do you wish to install from the DEB list\n or your distros repositories? (deb/repo)?" PROMPT
 if [ "$PROMPT" == "deb" ]; then
   printf "Installing from DEB list.\n";
   printf "WARNING: if your listed .deb files do not have an\n online repository, those package won't be updated!\n"
   sleep 3
   
-MACHINE_ARCH=`uname -m`
-if [ ${MACHINE_ARCH} == 'x86_64' ]; then
+if [ `getconf LONG_BIT` = "64" ]
+then
 
     URL='http://path.to/my64bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
     URL='http://path.to/my64bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
   
-else
+elif [ `getconf LONG_BIT` = "32" ]
+then
 
     URL='http://path.to/my32bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
     URL='http://path.to/my32bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
