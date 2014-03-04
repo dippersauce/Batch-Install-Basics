@@ -1,5 +1,8 @@
 #!/bin/bash
+
 #Script to install packages automatically. Usefull for rapidly setting up a new installation of Linux.
+#No longer a fork of bennuttall's "installs.sh" , as the script has been completely rewritten and relicensed.
+
 #v0.5 (Stable)
 
 #Copyright (C) 2014  Austin "MTSnacks" Lasota
