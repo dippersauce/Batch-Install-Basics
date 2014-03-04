@@ -4,7 +4,7 @@
 #No longer a fork of bennuttall's "installs.sh" , as the script has been completely rewritten and relicensed.
 
 #v0.6 (Stable)
-#No longer using uname to determine achitecture, becasue in a chroot'ed 32-bit environment, 
+#No longer using uname to determine achitecture, because in a chroot'ed 32-bit environment, 
 #uname still answers like the 64-bit host system. Instead, the program will fetch the length of a long bit.
 
 #Copyright (C) 2014  Austin "MTSnacks" Lasota
