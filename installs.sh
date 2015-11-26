@@ -1,13 +1,12 @@
 #!/bin/bash
 
 #Script to install packages automatically. Usefull for rapidly setting up a new installation of Linux.
-#No longer a fork of bennuttall's "installs.sh" , as the script has been completely rewritten and relicensed.
 
 #v0.6 (Stable)
 #No longer using uname to determine achitecture, because in a chroot'ed 32-bit environment, 
 #uname still answers like the 64-bit host system. Instead, the program will fetch the length of a long bit.
 
-#Copyright (C) 2014  Austin "MTSnacks" Lasota
+#Copyright (C) 2014  NullSh0ck
 
 #This program is free software; you can redistribute it and/or
 #modify it under the terms of the GNU General Public License
