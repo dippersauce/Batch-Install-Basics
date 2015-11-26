@@ -8,7 +8,7 @@ Packages can be installed directly from your distro's repositories, however othe
 
 PPa's can be added with the PPA array, simply add "ppa:example" to the array to add it to the list.
 
-Deb packages can be downloaded and installed  automatically, all you need is a valid URL to the package. Two arrays are used to separate the 64-bit and 32-bit verions.
+Deb packages can be downloaded and installed  automatically, all you need is a valid URL to the package. An ifelse is used to separate the 64-bit and 32-bit verions.
 
 ```
 URL='http://path.to/my64bit.deb'; PACKAGE=`mktemp`; wget "$URL" -qO $PACKAGE && sudo dpkg -i $PACKAGE; rm $PACKAGE
