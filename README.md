@@ -1,4 +1,4 @@
-# Bash Batch Install Basics
+# Bash Install Basics
 
 An example bash script to install all your essential basics on a fresh Ubuntu install. Useful for rapidly setting up a VM or server, or installing all your essentials on a new machine.
 
