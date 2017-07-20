@@ -6,7 +6,7 @@
 #No longer using uname to determine achitecture, because in a chroot'ed 32-bit environment, 
 #uname still answers like the 64-bit host system. Instead, the program will fetch the length of a long bit.
 
-#Copyright (C) 2014  NullSh0ck
+#Copyright (C) 2014  Warren P. 
 
 #This program is free software; you can redistribute it and/or
 #modify it under the terms of the GNU General Public License
